@@ -11,7 +11,7 @@ type Props = {
 
 const Feed = ({ edges }: Props) => (
   <div className={styles['feed']}>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
       <p>
         <label>Your Name: <input type="text" name="name" /></label>
       </p>
@@ -27,6 +27,7 @@ const Feed = ({ edges }: Props) => (
       <p>
         <label>Message: <textarea name="message"></textarea></label>
       </p>
+      <div data-netlify-recaptcha="true"></div>
       <p>
         <button type="submit">Send</button>
       </p>
